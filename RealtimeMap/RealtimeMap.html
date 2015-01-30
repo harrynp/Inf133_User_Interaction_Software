@@ -1,0 +1,122 @@
+<html>
+
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Realtime Map Assignment">
+		<title>Realtime Map Assignment</title>
+		<meta name="author" content="Harry N. Pham">
+		<style>
+			.myOutline {border:solid black 1px}
+			.myBack1 {background-color: rgb(196,227,243)}
+			.myBack2 {background-color: rgb(208,233,198)}
+			.myBack3 {background-color: rgb(238,238,238)}
+		</style>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//students.ics.uci.edu/~harrynp/css/ripples.min.css" rel="stylesheet">
+        <link href="//students.ics.uci.edu/~harrynp/css/material-wfont.min.css" rel="stylesheet">
+		<link href="//students.ics.uci.edu/~harrynp/css/snackbar.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Your site -->
+		<div class="container">
+			<div class="row">
+				<div class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="https://students.ics.uci.edu/">ICS</a>
+					</div>
+					<div class="navbar-collapse collapse navbar-responsive-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="https://students.ics.uci.edu/~harrynp/">Home</a></li>
+							<li class="dropdown">
+								<a href="https://students.ics.uci.edu/~harrynp/assignments/" class="dropdown-toggle" data-toggle="dropdown">Assignments<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="https://students.ics.uci.edu/~harrynp/assignments/RealtimeWeb/RealtimeWeb.html">Realtime Web</a></li>
+									<li class="active"><a href="https://students.ics.uci.edu/~harrynp/assignments/RealtimeMap/RealtimeMap.html">Realtime Map</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<h1 class="row text-center">Realtime Map Assignment</h1>
+			<p class="row text-center">The Google Map below is enhanced with markers showing where traffic incidents are located using data parsed from the traffic API by Microsoft.  Any traffic incident that is between Los Angeles, CA and Irvine, CA should appear on the map.  The marker changes to a do not enter sign if the road is closed.  A heatmap is used to show areas where there are many traffic incidents occurring at that time.  Clicking on the coordinates will recenter the map to the marker where the traffic incident is occurring.</p>
+			<hr/>
+			<div class="row">
+				<div class="row text-center">
+					<div class="col-sm-6 col-md-6 col-lg-6">Data Source</div>
+					<div class="col-sm-4 col-md-4 col-lg-4">Description</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">Data Type</div>
+				</div>
+				<div class="row text-center myBack1">
+					<div class="col-sm-6 col-md-6 col-lg-6"><a href="http://api.openweathermap.org/data/2.5/find?lat=33.6694&lon=-117.8231&cnt=10&units=metric&mode=xml">http://api.openweathermap.org/data/2.5/find?lat=33.6694&lon=-117.8231&cnt=10&units=metric&mode=xml</a></div>
+					<div class="col-sm-4 col-md-4 col-lg-4">Current Temperature from Cities around Irvine, CA</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">XML</div>
+				</div>
+				<div class="row text-center myBack2">
+					<div class="col-sm-6 col-md-6 col-lg-6"><a href="http://dev.virtualearth.net/REST/v1/Traffic/Incidents/33.6842,-117.7925,34.0500,-118.2500?key=Ag4hShfXA5VynNHyPcZCd7TVZ0Kt2Ftw-YjA8MwU4KDZ7-bVdX6lvVjPPSQf0gr4">http://dev.virtualearth.net/REST/v1/Traffic/Incidents/33.6842,-117.7925,34.0500,-118.2500?key=Ag4hShfXA5VynNHyPcZCd7TVZ0Kt2Ftw-YjA8MwU4KDZ7-bVdX6lvVjPPSQf0gr4</a></div>
+					<div class="col-sm-4 col-md-4 col-lg-4">Traffic Incidents between Los Angeles, CA and Irvine, CA</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">JSON</div>
+
+				</div>
+				<div class="row text-center myBack1">
+					<div class="col-sm-6 col-md-6 col-lg-6"><a href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson">http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson</a></div>
+					<div class="col-sm-4 col-md-4 col-lg-4">Earthquakes within the past hour</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">JSON</div>
+				</div>
+				<div class="row text-center myBack2">
+					<div class="col-sm-6 col-md-6 col-lg-6"><a href="https://api.flickr.com/services/feeds/geo/United+States/California/Irvine&format=json">https://api.flickr.com/services/feeds/geo/United+States/California/Irvine&format=json</a></div>
+					<div class="col-sm-4 col-md-4 col-lg-4">Recent Uploads to Flickr at Irvine, CA</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">JSONP</div>
+				</div>
+				<div class="row text-center myBack1">
+					<div class="col-sm-6 col-md-6 col-lg-6"><a href="https://api.instagram.com/v1/media/search?lat=33.6694&lng=-117.8231&client_id=98a8de46c63a4df1a4d2d623428e4ef9">https://api.instagram.com/v1/media/search?lat=33.6694&lng=-117.8231&client_id=98a8de46c63a4df1a4d2d623428e4ef9</a></div>
+					<div class="col-sm-4 col-md-4 col-lg-4">Recent Uploads to Instagram at Irvine, CA</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">JSON</div>
+				</div>
+			</div>
+			<hr/>
+			<div class="row text-center">
+				<h1 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Traffic Incidents between Los Angeles, CA and Irvine, CA</h1>
+				<div class="row text-center">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id=map_canvas style="width: 50%; height: 100%">
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id=data>
+						<div class="row myBack3">
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<a href="javascript:void(0)" class="btn btn-primary" onclick="map.setCenter(new google.maps.LatLng(33.8683, -118.0675))">Recenter Map at Cerritos, CA</a>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<a href="javascript:void(0)" class="btn btn-primary" onclick="toggleHeatmap()">Toggle Heatmap</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        <!-- Your site ends -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="RealtimeMap.js"></script>
+        <script src="//students.ics.uci.edu/~harrynp/js/ripples.min.js"></script>
+        <script src="//students.ics.uci.edu/~harrynp/js/material.min.js"></script>
+        <script src="//students.ics.uci.edu/~harrynp/js/snackbar.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $.material.init();
+            });
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Realtime Web Assignment">
+		<title>Realtime Web Assignment</title>
+		<meta name="author" content="Harry N. Pham">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<style>
+			.myOutline {border:solid black 1px}
+			.myBack1 {background-color: rgb(150,200,200)}
+			.myBack2 {background-color: rgb(200,150,200)}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="row text-center">
+				Realtime Web Assignment
+			</div>
+			<hr/>
+			<div class="row text-center">
+				<div class="col-sm-6 col-md-6 col-lg-6 myOutline">Data Source</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack1">Description</div>
+				<div class="col-sm-2 col-md-2 col-lg-2 myOutline myBack2">Data Type</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-sm-6 col-md-6 col-lg-6 myOutline">http://api.openweathermap.org/data/2.5/weather?q=Cerritos&units=metric&mode=xml</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack1">Current Temperature in Cerritos, CA</div>
+				<div class="col-sm-2 col-md-2 col-lg-2 myOutline myBack2">XML</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-sm-6 col-md-6 col-lg-6 myOutline">http://dev.virtualearth.net/REST/v1/Traffic/Incidents/33.6842,-117.7925,34.0500,-118.2500?key=Ag4hShfXA5VynNHyPcZCd7TVZ0Kt2Ftw-YjA8MwU4KDZ7-bVdX6lvVjPPSQf0gr4</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack1">Traffic Incidents between Los Angeles, CA and Irvine, CA</div>
+				<div class="col-sm-2 col-md-2 col-lg-2 myOutline myBack2">JSON</div>
+
+			</div>
+			<div class="row text-center">
+				<div class="col-sm-6 col-md-6 col-lg-6 myOutline">http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack1">Earthquakes within the past hour</div>
+				<div class="col-sm-2 col-md-2 col-lg-2 myOutline myBack2">JSON</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-sm-6 col-md-6 col-lg-6 myOutline">http://api.flickr.com/services/feeds/geo/United+States/California/Cerritos&format=json</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack1">Recent Uploads to Flickr at Cerritos, CA</div>
+				<div class="col-sm-2 col-md-2 col-lg-2 myOutline myBack2">JSONP</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-sm-6 col-md-6 col-lg-6 myOutline">https://api.instagram.com/v1/locations/220332713/media/recent?client_id=98a8de46c63a4df1a4d2d623428e4ef9</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack1">Recent Uploads to Instagram at Cerritos, CA</div>
+				<div class="col-sm-2 col-md-2 col-lg-2 myOutline myBack2">JSON</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="container">
+			<div class="row text-center">
+				<div class="myOutline">Current Temperature at Cerritos
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline">Geodata
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack1">Description
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack2">Extra
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline" id=geodata1>Geodata1
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack1" id=description1>Description1
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 myOutline myBack2" id=extra1>Extra1
+				</div>
+			</div>
+			<hr/>
+			<div class="row text-center" id=traffic>
+				<div class="myOutline">Traffic Incidents between Los Angeles, CA and Irvine, CA
+				</div>
+				<div class="myOutline myBack1" id=description2>Description2
+				</div>
+			</div>
+			<hr/>
+			<div class="row text-center" id=earthquake>
+				<div class="myOutline">Earthquakes within the past hour
+				</div>
+			</div>
+			<hr/>
+			<div class="row text-center" id=flickr>
+				<div class="myOutline">Recent Uploads to Flickr at Cerritos, CA
+				</div>
+			</div>
+			<hr/>
+			<div class="row text-center" id=instagram>
+				<div class="myOutline" id=geodata5>Recent Uploads to Instagram at Cerritos, CA
+				</div>
+			</div>
+		</div>
+		<!-- Javascript -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="RealtimeWeb.js"></script>
+	</body>
+</html>
